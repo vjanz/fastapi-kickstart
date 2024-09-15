@@ -1,0 +1,51 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fastapi-kickstart
+    container_name: backend
+    ports:
+      - "8000:8000"
+    env_file:
+        .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+
+  db:
+    image: postgres:15.2-alpine
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  celery:
+    container_name: celery_worker
+    image: fastapi-kickstart
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["celery", "-A", "src.celery_config.celery_app", "worker", "--loglevel=info"]
+    depends_on:
+      - redis
+      - backend
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
+  redis_data:
+

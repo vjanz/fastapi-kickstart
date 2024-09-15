@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Poetry
+.cache
+coverage.xml
+
+# Virtual environment
+.env/
+.venv/
+
+# Logs
+*.log
+
+# Coverage
+htmlcov/
+
+pytest-cov
+.tox/
+.coverage
+.coverage.*
+
+# MyPy cache
+.mypy_cache/
+
+# Test reports
+.pytest_cache/
+.env
+.idea/

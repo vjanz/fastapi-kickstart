@@ -1,0 +1,8 @@
+[run]
+omit =
+    src/tests/*
+    src/tests/*/*
+    src/core/config.py
+    src/main.pyc
+    src/api/dependencies.py
+    src/api/routes/tasks.py
