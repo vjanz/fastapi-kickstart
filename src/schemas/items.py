@@ -1,7 +1,9 @@
-from pydantic import BaseModel, ConfigDict
+import uuid
+
+from src.schemas.base import BaseSchema
 
 
-class ItemBase(BaseModel):
+class ItemBase(BaseSchema):
     name: str
 
 
@@ -9,7 +11,5 @@ class ItemCreate(ItemBase):
     pass
 
 
-class ItemResponse(ItemBase):
-    id: int
-
-    model_config = ConfigDict(from_attributes=True)
+class ItemRead(ItemBase):
+    id: uuid.UUID

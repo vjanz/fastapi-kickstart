@@ -102,7 +102,7 @@ def celery_worker(celery_config: dict[str, Any]) -> Celery:
     """
     Fixture to start a Celery worker for testing.
     """
-    from src.celery_config import celery_app
+    from src.core.celery_config import celery_app
 
     celery_app.config_from_object(celery_config)
     return celery_app

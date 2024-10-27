@@ -1,4 +1,4 @@
-from src.celery_config import celery_app
+from src.core.celery_config import celery_app
 
 
 @celery_app.task  # type: ignore
