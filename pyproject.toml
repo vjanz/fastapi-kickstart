@@ -32,6 +32,7 @@ mypy = "^1.11.2"
 pytest-celery = "^1.1.2"
 types-jwt = "^0.1.3"
 types-passlib = "^1.7.7.20240819"
+pre-commit = "^4.0.1"
 
 [build-system]
 requires = ["poetry-core"]
@@ -43,7 +44,6 @@ python_version = "3.12"
 ignore_missing_imports = true
 strict = true
 exclude = ["venv", ".venv", "alembic"]
-plugins = ["sqlalchemy.ext.mypy.plugin"]
 
 [tool.ruff]
 target-version = "py312"

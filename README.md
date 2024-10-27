@@ -11,11 +11,13 @@ This repository provides a template for quickly starting a project with FastAPI.
 - **PostgreSQL Integration**: Basic configuration for PostgreSQL.
 - **Test Setup**: Fixtures for database setup with SQLite and teardown, celery and redis.
 - **CRUD Operations**: Basic CRUD operations with SQLAlchemy.
+- **Pre-commit Hooks**: Automated code quality checks during commits.
 - **Poetry**: Dependency management with Poetry.
 - **Celery**: Asynchronous task queue for background tasks.
 - **Separated Dockerfile for Development and Production**: Dockerfile for development and production environments.
 - **Workflows**: GitHub Actions for CI (Testing and Linting).
 - **Makefile**: Makefile for common commands.
+
 
 ## Getting Started :clipboard:
 
@@ -115,6 +117,7 @@ make test-cov
 
 - [x] Add User model and CRUD operations
 - [x] Add JWT Authentication
+- [x] Add pre-commit hooks
 - [ ] Add Seeders for fast database setup
 - [ ] Add more CRUD operations
 
