@@ -5,6 +5,8 @@ This repository provides a template for quickly starting a project with FastAPI.
 ## Features :mag_right:
 
 - **SQLAlchemy**: ORM for SQL databases.
+- **Authentication**:
+  - **OAuth 2.0 with JWT (JSON Web Token)**: OAuth2PasswordBearer for token-based authentication, using JWT tokens for secure and stateless client authorization.
 - **SQLite for Testing**: In-memory SQLite database for testing.
 - **PostgreSQL Integration**: Basic configuration for PostgreSQL.
 - **Test Setup**: Fixtures for database setup with SQLite and teardown, celery and redis.
@@ -111,8 +113,10 @@ make test-cov
 
 ### Roadmap :construction:
 
-- [ ] Add User model and CRUD operations
-- [ ] Add JWT Authentication
+- [x] Add User model and CRUD operations
+- [x] Add JWT Authentication
+- [ ] Add Seeders for fast database setup
+- [ ] Add more CRUD operations
 
 ### Contributing :handshake:
 
